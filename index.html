@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corn State Can Cleaners - Iowa's Freshest Bins</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(76, 175, 80, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234caf50" width="1200" height="600"/></svg>');
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffeb3b;
+            color: #2e7d32;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #fdd835;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f5f5f5;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2e7d32;
+            font-size: 2.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #4caf50;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            background: #4caf50;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .faq-item h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .testimonial blockquote {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial cite {
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ffeb3b;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #ffeb3b;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #2e7d32;
+                display: none;
+            }
+
+            nav ul li {
+                margin: 0;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🌽 Corn State Can Cleaners</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#book">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Iowa's Freshest Bins—Clean, Green, and Corn State Proud!</h1>
+            <p>Say goodbye to stinky, dirty garbage cans. We bring sparkling clean bins right to your curb—fast, affordable, and eco-friendly.</p>
+            <a href="#book" class="btn">Book Your First Clean Today!</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Locally Owned. Iowa Proud.</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem;">
+                Corn State Can Cleaners was founded by Iowa locals who care about our neighborhoods, our environment, and your family's health. We're passionate about providing a service that makes life easier, cleaner, and a little more pleasant for everyone. We use eco-friendly cleaning methods and biodegradable products, and we're committed to keeping Iowa beautiful—one bin at a time.
+            </p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services & Pricing</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Monthly Bin Cleaning</h3>
+                    <div class="price">$20/month</div>
+                    <p>Up to 2 bins (each additional bin $5)</p>
+                    <p>Keep your bins fresh and sanitized all year long.</p>
+                </div>
+                <div class="service-card">
+                    <h3>One-Time Clean</h3>
+                    <div class="price">$10/bin</div>
+                    <p>Perfect for spring cleaning, move-ins, or after a big event.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Seasonal Special</h3>
+                    <div class="price">$50</div>
+                    <p>3 months for up to 2 bins (paid upfront)</p>
+                    <p>Great for summer or fall refresh!</p>
+                </div>
+                <div class="service-card">
+                    <h3>Referral Discount</h3>
+                    <div class="price">$5 OFF</div>
+                    <p>For every new customer you refer</p>
+                    <p>No limit—spread the word and save!</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <h3>What's Included:</h3>
+                <ul style="display: inline-block; text-align: left; margin-top: 1rem;">
+                    <li>High-pressure, eco-friendly cleaning</li>
+                    <li>Deodorizing and sanitizing</li>
+                    <li>Curbside service—no need to be home</li>
+                    <li>Friendly, professional staff</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Schedule Your Service</h3>
+                    <p>Book online or call us. Choose a date that works for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Arrive at Your Curb</h3>
+                    <p>On your scheduled day, just leave your bins out. We'll handle the rest.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Clean & Sanitize</h3>
+                    <p>We use high-pressure, eco-friendly cleaning to remove grime, bacteria, and odors.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Enjoy Fresh, Clean Bins!</h3>
+                    <p>Your bins are left sparkling, sanitized, and smelling fresh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="section">
+        <div class="container">
+            <h2>Book Now</h2>
+            <div class="contact-form">
+                <h3 style="text-align: center; margin-bottom: 2rem;">Ready for cleaner bins?</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bins">Number of bins:</label>
+                        <select id="bins" name="bins" required>
+                            <option value="">Select...</option>
+                            <option value="1">1 bin</option>
+                            <option value="2">2 bins</option>
+                            <option value="3">3 bins</option>
+                            <option value="4">4+ bins</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Preferred service:</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select...</option>
+                            <option value="monthly">Monthly ($20/month)</option>
+                            <option value="onetime">One-time ($10/bin)</option>
+                            <option value="seasonal">Seasonal ($50/3 months)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn">Submit Booking Request</button>
+                    </div>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;">
+                    <em>Secure online payment available after booking confirmation.</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>Do I need to be home for service?</h3>
+                    <p>Nope! Just leave your bins at the curb and we'll take care of the rest.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What areas do you serve?</h3>
+                    <p>We currently serve Council Bluffs and surrounding neighborhoods. More areas coming soon!</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is your cleaning process safe for pets and kids?</h3>
+                    <p>Yes! We use only eco-friendly, biodegradable products.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I pay?</h3>
+                    <p>We accept all major credit cards and online payments.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I pause or cancel my subscription?</h3>
+                    <p>Absolutely—just contact us anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <blockquote>"I never realized how much I needed this service until I tried it. My bins have never been cleaner!"</blockquote>
+                    <cite>— Sarah M., Council Bluffs</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Fast, friendly, and my bins don't stink anymore. Highly recommend!"</blockquote>
+                    <cite>— Mike R., Iowa City</cite>
+                </div>
+                <div class="testimonial">
+                    <blockquote>"Love supporting a local business that cares about the environment."</blockquote>
+                    <cite>— Emily T., Des Moines</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div style="text-align: center;">
+                <h3>Questions? Ready to book?</h3>
+                <p style="font-size: 1.2rem; margin: 1rem 0;">
+                    <strong>Call or text: (555) 123-4567</strong><br>
+                    <strong>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3851565e57785b574a564b4c594c5d5b59565b545d59565d4a4b165b5755">[email&#160;protected]</a></strong>
+                </p>
+                <p>Follow us on Facebook for updates and special offers!</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Corn State Can Cleaners</h3>
+                    <p>Iowa's freshest bins, delivered to your curb.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#services">Services & Pricing</a></p>
+                    <p><a href="#book">Book Now</a></p>
+                    <p><a href="#contact">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c4adaaa2ab84a7abb6aab7b0a5b0a1a7a5aaa7a8a1a5aaa1b6b7eaa7aba9">[email&#160;protected]</a></p>
+                </div>
+            </div>
+            <p>&copy; 2025 Corn State Can Cleaners. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking request! We will contact you within 24 hours to confirm your appointment.');
+        });
+    </script>
+</body>
+</html>
