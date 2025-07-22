@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corn State Can Cleaners - Omaha's Premier Trash Bin Cleaning Service</title>
+    <meta name="description" content="Professional residential garbage can cleaning services in Iowa and Nebraska. Eco-friendly, reliable, and affordable. Sign up today!">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --accent-yellow: #ffc107;
+            --light-green: #e8f5e8;
+            --dark-gray: #333333;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .logo i {
+            margin-right: 0.5rem;
+            color: var(--accent-yellow);
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-green);
+        }
+
+        .signup-btn {
+            background: var(--accent-yellow);
+            color: var(--dark-gray) !important;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .signup-btn:hover {
+            background: #ffb300;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: var(--white);
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            margin-bottom: 3rem;
+        }
+
+        .hero .signup-btn {
+            font-size: 1.2rem;
+            padding: 18px 36px;
+            border-radius: 50px;
+        }
+
+        .hero-description {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Easy to Sign Up Section */
+        .signup-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 3rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .plan-type {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .plan-frequency {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price span {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .plan-details {
+            margin: 1.5rem 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-features li i {
+            color: var(--secondary-green);
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image i {
+            font-size: 12rem;
+            color: var(--primary-green);
+            opacity: 0.8;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 80px 0;
+            background: var(--light-green);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .process-step h3 {
+            font-size: 1.3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Sign Up Process */
+        .signup-process {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .signup-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .signup-step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .signup-step i {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .signup-step h4 {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .signup-step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .final-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .final-cta h3 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        /* Service Areas */
+        .service-areas {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .area-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .area-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .area-item i {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .area-item h4 {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: var(--light-gray);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light-green);
+        }
+
+        .faq-question h4 {
+            color: var(--primary-green);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            color: var(--primary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 2rem 2rem;
+            color: #666;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            padding: 2rem;
+        }
+
+        .contact-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-yellow);
+        }
+
+        .contact-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .contact-item a {
+            color: var(--accent-yellow);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--accent-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-yellow);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image i {
+                font-size: 8rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                Corn State Can Cleaners
+            </div>
+            <ul class="nav-links">
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#service-area">Service Area</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://buy.stripe.com/test_your_payment_link_here" class="signup-btn">Sign Up!</a>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Iowa's Premier Trash Bin Cleaning Service</h1>
+                <p class="hero-subtitle">Looking for a trash can cleaning company near Council Bluffs? Look no further than Corn State Can Cleaners! We provide professional trash can cleaning services to both residential and commercial customers.</p>
+                <div class="hero-cta">
+                    <a href="https://buy.stripe.com/test_your_payment_link_here" class="signup-btn">Sign Up!</a>
+                </div>
+                <p class="hero-description">Whether you have one trash can or a hundred, we can keep them clean and free of odors. Our eco-friendly process uses high-pressure washing and sanitizing to eliminate 99.9% of germs and bacteria, returning your bins looking and smelling sparkling clean!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="signup-section">
+        <div class="container">
+            <h2 class="section-title">Easy to Sign Up!</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-type">Monthly</div>
+                    <div class="plan-frequency">service plan</div>
+                    <div class="plan-frequency">Every 4 Weeks / 12 Cleans per Year</div>
+                    <div class="plan-price">$20<span>/ Visit</span></div>
+                    <div class="plan-details">for up to 2 bins</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Up to 2 bins included</li>
+                        <li><i class="fas fa-check"></i> Monthly deep cleaning</li>
+                        <li><i class="fas fa-check"></i> Eco-friendly sanitizing</li>
+                        <li><i class="fas fa-check"></i> Additional bins only $5 each/visit</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/test_monthly_plan_link" class="signup-btn">Sign Up!</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-type">Bi-Monthly</div>
+                    <div class="plan-frequency">service plan</div>
+                    <div class="plan-frequency">Every 8 Weeks / 6 Cleans per Year</div>
+                    <div class="plan-price">$25<span>/ Visit</span></div>
+                    <div class="plan-details">for up to 2 bins</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Up to 2 bins included</li>
+                        <li><i class="fas fa-check"></i> Bi-monthly cleaning</li>
+                        <li><i class="fas fa-check"></i> Perfect for lighter usage</li>
+                        <li><i class="fas fa-check"></i> Additional bins only $5 each/visit</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/test_bimonthly_plan_link" class="signup-btn">Sign Up!</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-type">Quarterly</div>
+                    <div class="plan-frequency">service plan</div>
+                    <div class="plan-frequency">Every 12 Weeks / 4 Cleans per Year</div>
+                    <div class="plan-price">$30<span>/ Visit</span></div>
+                    <div class="plan-details">for up to 2 bins</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Up to 2 bins included</li>
+                        <li><i class="fas fa-check"></i> Seasonal deep cleaning</li>
+                        <li><i class="fas fa-check"></i> Great for maintenance</li>
+                        <li><i class="fas fa-check"></i> Additional bins only $5 each/visit</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/test_quarterly_plan_link" class="signup-btn">Sign Up!</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-type">One-Time</div>
+                    <div class="plan-frequency">cleaning</div>
+                    <div class="plan-frequency">Perfect for spring cleaning or move-in</div>
+                    <div class="plan-price">$10<span>/ Bin</span></div>
+                    <div class="plan-details">per bin cleaned</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> No commitment required</li>
+                        <li><i class="fas fa-check"></i> Same professional service</li>
+                        <li><i class="fas fa-check"></i> Perfect for trying us out</li>
+                        <li><i class="fas fa-check"></i> Book anytime you need</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/test_onetime_plan_link" class="signup-btn">Sign Up!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>We're Corn State Can Cleaners!</h2>
+                    <p>Corn State Can Cleaners cleans, sanitizes, and deodorizes your residential trash bins with highly customized, eco-friendly trash can cleaning equipment that uses high-pressure wash systems to kill 99.9% of germs & bacteria, and return your bins looking and smelling sparkling clean!</p>
+                    <p>We use only the highest quality eco-friendly bin sanitizers and cleaners to clean your trash cans. Our garbage can cleaning services are safe for the environment and will not harm your plants or animals. We also have a team of experienced and friendly customer service representatives who are always available to answer your questions.</p>
+                    <p>For trash bin cleaning services in Iowa, there is only one company that you can trust - call Corn State Can Cleaners today!</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-trash-can"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup-process">
+        <div class="container">
+            <h2 class="section-title">Easy Sign-Up Process</h2>
+            <div class="signup-steps">
+                <div class="signup-step">
+                    <i class="fas fa-mouse-pointer"></i>
+                    <h4>Click "Sign Up!"</h4>
+                    <p>Choose your preferred service plan and click the Sign Up button</p>
+                </div>
+                <div class="signup-step">
+                    <i class="fas fa-edit"></i>
+                    <h4>Quick Registration</h4>
+                    <p>Complete our simple entry form with your service details</p>
+                </div>
+                <div class="signup-step">
+                    <i class="fas fa-calendar-check"></i>
+                    <h4>Schedule Your Clean</h4>
+                    <p>Your first cleaning visit will be scheduled as soon as possible</p>
+                </div>
+                <div class="signup-step">
+                    <i class="fas fa-bell"></i>
+                    <h4>Get Reminders</h4>
+                    <p>We'll send reminder notifications the day prior to your clean visits</p>
+                </div>
+            </div>
+            <div class="final-cta">
+                <h3>Enjoy your freshly cleaned, sanitized, and deodorized trash bins!</h3>
+                <a href="https://buy.stripe.com/test_your_payment_link_here" class="signup-btn">Sign Up!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process-section">
+        <div class="container">
+            <h2 class="section-title">Bin Cleaning Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>High-Pressure Loading</h3>
+                    <p>Bins are loaded and positioned for our high-pressure wash system with rotating cleaning heads</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Sanitize & Steam Clean</h3>
+                    <p>Bins are sanitized and steam-cleaned with our eco-friendly, high-pressure wash system that kills 99.9% of germs & bacteria</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Eco-Friendly Disposal</h3>
+                    <p>Our equipment collects and properly disposes of wastewater, providing an eco-friendly alternative to leaving wastewater on-site</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Final Inspection</h3>
+                    <p>Bins receive a final inspection, a treatment of odor neutralizing fragrant spray, and are returned looking and smelling sparkling clean</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-area" class="service-areas">
+        <div class="container">
+            <h2 class="section-title">Our Service Areas</h2>
+            <div class="areas-grid">
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Council Bluffs</h4>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Omaha Metro</h4>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Carter Lake</h4>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Bellevue</h4>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Papillion</h4>
+                </div>
+                <div class="area-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>La Vista</h4>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <p style="font-size: 1.1rem; color: #666;">More areas coming soon! Contact us to see if we serve your neighborhood.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Still Have Questions? Check the FAQs!</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do I need to be home for the service?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all! Just leave your bins at the curb on your scheduled service day, and we'll take care of everything. You can go about your day while we make your bins sparkle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What areas do you serve?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We currently serve Council Bluffs, Omaha Metro, and surrounding neighborhoods in Iowa and Nebraska. We're expanding rapidly, so contact us if we don't serve your area yet!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is your cleaning process safe for pets and children?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We use only eco-friendly, biodegradable cleaning products that are safe for your family, pets, and the environment. Our process eliminates harmful bacteria without using harsh chemicals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I pay for the service?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards through our secure Stripe payment system. Simply click "Sign Up!" and you'll be taken to our secure payment page to complete your subscription.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I pause or cancel my subscription?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! You can pause or cancel your subscription at any time with no penalties. Just contact us at least 24 hours before your next scheduled service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What if I'm not satisfied with the service?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 100% satisfaction guarantee. If you're not completely happy with our service, we'll come back and re-clean your bins at no charge, or provide a full refund.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Corn State Can Cleaners</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h4>(555) 123-4567</h4>
+                    <p>Call or text us anytime</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h4><a href="/cdn-cgi/l/email-protection#31585f575e71525e435f424550455452505f525d54505f5443421f525e5c"><span class="__cf_email__" data-cfemail="30595e565f70535f425e434451445553515e535c55515e5542431e535f5d">[email&#160;protected]</span></a></h4>
+                    <p>We respond within 24 hours</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Council Bluffs, IA</h4>
+                    <p>Serving Iowa & Nebraska</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="https://buy.stripe.com/test_your_payment_link_here" class="signup-btn">Sign Up!</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#process">Our Process</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQs</a>
+                    <a href="#service-area">Service Area</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#pricing">Monthly Cleaning</a>
+                    <a href="#pricing">Bi-Monthly Cleaning</a>
+                    <a href="#pricing">Quarterly Cleaning</a>
+                    <a href="#pricing">One-Time Cleaning</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="tel:555-123-4567">(555) 123-4567</a>
+                    <a href="/cdn-cgi/l/email-protection#0960676f66496a667b677a7d687d6c6a68676a656c68676c7b7a276a6664"><span class="__cf_email__" data-cfemail="f69f989099b6959984988582978293959798959a939798938485d895999b">[email&#160;protected]</span></a>
+                </div>
+                <div class="footer-section">
+                    <h4>Service Terms & Conditions</h4>
+                    <a href="#">Website Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Corn State Can Cleaners. All rights reserved. | Licensed & Insured</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--white)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
